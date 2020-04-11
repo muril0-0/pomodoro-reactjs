@@ -1,0 +1,53 @@
+.wrapper-panel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  margin-top: 30px;
+}
+
+.work-panel,
+.relax-panel {
+  width: 300px;
+  height: 100px;
+  border-radius: 20px 20px 0 0;
+
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
+  font-size: 36px;
+}
+
+.work-panel {
+  color: var(--blue);
+}
+
+.relax-panel {
+  color: var(--green);
+}
+
+.selector-time {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.work-panel > p {
+  background-color: var(--blue);
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+}
+
+.relax-panel > p {
+  background-color: var(--green);
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+}
