@@ -1,0 +1,21 @@
+.wrapper-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-primaryDark);
+
+  height: 50px;
+  color: aliceblue;
+}
+
+.title-bar {
+  margin-left: 10px;
+}
+
+.theme-switch {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 10px;
+}

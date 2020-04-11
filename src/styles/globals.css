@@ -1,0 +1,21 @@
+:root {
+  --bg-primaryDark: #191a21;
+  --bg-secondDark: #282a36;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  outline: 0px;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background-color: var(--bg-secondDark);
+}
