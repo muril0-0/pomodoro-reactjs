@@ -1,10 +1,11 @@
 import React from "react";
-import { useState } from "react";
 import "../styles/panel.css";
 
+import { useWork, useRelax } from "../utils/CustomHook";
+
 export default function Panel() {
-  const [Work, setWork] = useState(60 * 25);
-  const [Relax, setRelax] = useState(60 * 5);
+  const { Work, setWork } = useWork();
+  const { Relax, setRelax } = useRelax();
 
   function UpSeconds(SelectTime) {
     const newTime = SelectTime + 1;

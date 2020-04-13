@@ -6,14 +6,18 @@ import NavBar from "./components/NavBar";
 import Display from "./components/Display";
 import Panel from "./components/Panel";
 
+import CustomProvider from "./utils/CustomHook";
+
 function App() {
   return (
     <>
-      <div className="wrapper-app">
-        <NavBar />
-        <Display />
-        <Panel />
-      </div>
+      <CustomProvider>
+        <div className="wrapper-app">
+          <NavBar />
+          <Display />
+          <Panel />
+        </div>
+      </CustomProvider>
     </>
   );
 }
