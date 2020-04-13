@@ -49,11 +49,48 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
 
   margin-top: 30px;
-  width: calc(100% - 40px);
+  width: calc(100% - 65px);
+}
 
+.controls button {
+  background-color: transparent;
+  border: 2px solid var(--red);
+  padding: 8px 15px;
+  font-weight: bold;
+  font-size: 16px;
   color: #fff;
+  transition: transform 0.2s;
   cursor: pointer;
+}
+
+#play-btn {
+  border-color: var(--blue);
+  border-radius: 0px 10px 0px 10px;
+}
+
+#pause-btn {
+  border-radius: 10px;
+}
+
+#reset-btn {
+  border-color: var(--green);
+  border-radius: 10px 0px 10px 0px;
+}
+
+#play-btn:hover {
+  background-color: var(--blue);
+  transform: scale(1.15);
+}
+
+#pause-btn:hover {
+  background-color: var(--red);
+  transform: scale(1.15);
+}
+
+#reset-btn:hover {
+  background-color: var(--green);
+  transform: scale(1.15);
 }

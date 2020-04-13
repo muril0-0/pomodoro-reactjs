@@ -16,9 +16,9 @@ export default function Display() {
           Relax % 60
         )}`}</div>
         <div className="controls">
-          <p>Play</p>
-          <p>Pause</p>
-          <p>Stop</p>
+          <button id="play-btn">Start</button>
+          <button id="pause-btn">Pause</button>
+          <button id="reset-btn">Reset</button>
         </div>
       </div>
     </>
