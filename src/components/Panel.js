@@ -8,8 +8,12 @@ export default function Panel() {
   const { Relax, setRelax } = useRelax();
 
   function UpSeconds(SelectTime) {
-    const newTime = SelectTime + 1;
-    return newTime;
+    if (SelectTime < 60 * 60 + 59) {
+      const newTime = SelectTime + 1;
+      return newTime;
+    } else {
+      return 60 * 60;
+    }
   }
 
   function DownSeconds(SelectTime) {
@@ -22,8 +26,12 @@ export default function Panel() {
   }
 
   function UpMinutes(SelectTime) {
-    const newTime = SelectTime + 60;
-    return newTime;
+    if (SelectTime < 60 * 60) {
+      const newTime = SelectTime + 60;
+      return newTime;
+    } else {
+      return 60 * 60;
+    }
   }
 
   function DownMinutes(SelectTime) {
@@ -44,7 +52,25 @@ export default function Panel() {
               <button onClick={() => setWork(UpMinutes(Work))}>+60</button>
               <button onClick={() => setWork(DownMinutes(Work))}>-60</button>
             </div>
-            <p>{`${Math.floor(Work / 60)}:${Math.floor(Work % 60)}`}</p>
+
+            <div className="work-inputs">
+              <input
+                type="number"
+                id="workMinutes"
+                value={Math.floor(Work / 60)}
+                min="0"
+                max="60"
+              />
+              :
+              <input
+                type="number"
+                id="workSeconds"
+                value={Math.floor(Work % 60)}
+                min="0"
+                max="60"
+              />
+            </div>
+
             <div className="controls-time">
               <button onClick={() => setWork(UpSeconds(Work))}>+1</button>
               <button onClick={() => setWork(DownSeconds(Work))}>-1</button>
@@ -58,7 +84,24 @@ export default function Panel() {
               <button onClick={() => setRelax(UpMinutes(Relax))}>+60</button>
               <button onClick={() => setRelax(DownMinutes(Relax))}>-60</button>
             </div>
-            <p>{`${Math.floor(Relax / 60)}:${Math.floor(Relax % 60)}`}</p>
+            <div className="relax-inputs">
+              <input
+                type="number"
+                id="relaxMinutes"
+                value={Math.floor(Relax / 60)}
+                min="0"
+                max="60"
+              />
+              :
+              <input
+                type="number"
+                id="relaxSeconds"
+                value={Math.floor(Relax % 60)}
+                min="0"
+                max="60"
+              />
+            </div>
+
             <div className="controls-time">
               <button onClick={() => setRelax(UpSeconds(Relax))}>+1</button>
               <button onClick={() => setRelax(DownSeconds(Relax))}>-1</button>

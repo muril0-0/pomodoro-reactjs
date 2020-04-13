@@ -108,3 +108,30 @@
   transform: scale(1.05);
   color: #fff;
 }
+
+.relax-inputs,
+.work-inputs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.relax-inputs input,
+.work-inputs input {
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
+  font-size: 36px;
+  width: 60px;
+  text-align: center;
+  vertical-align: middle;
+  border: none;
+}
+
+.work-inputs input {
+  color: var(--blue);
+}
+
+.relax-inputs input {
+  color: var(--green);
+}
