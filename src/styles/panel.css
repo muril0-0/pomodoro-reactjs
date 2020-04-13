@@ -63,9 +63,6 @@
   border: none;
   width: 40px;
   height: 30px;
-  border-radius: 10px;
-
-  margin: 5px 0px;
   font-weight: bold;
 
   display: flex;
@@ -73,27 +70,41 @@
   align-items: center;
   justify-content: center;
 
+  transition: transform 0.1s ease;
+
   cursor: pointer;
+}
+
+.controls-time button:first-child {
+  border-radius: 10px 10px 0px 0px;
+  border-bottom: none;
+}
+
+.controls-time button:last-child {
+  border-radius: 0px 0px 10px 10px;
+  border-top: none;
 }
 
 .work-panel button {
   background-color: #fff;
   color: var(--blue);
-  border: 2px solid var(--blue);
+  border: 1px solid var(--blue);
 }
 
 .work-panel button:hover {
   background-color: var(--blue);
+  transform: scale(1.05);
   color: #fff;
 }
 
 .relax-panel button {
   background-color: #fff;
   color: var(--green);
-  border: 2px solid var(--green);
+  border: 1.5px solid var(--green);
 }
 
 .relax-panel button:hover {
   background-color: var(--green);
+  transform: scale(1.05);
   color: #fff;
 }
