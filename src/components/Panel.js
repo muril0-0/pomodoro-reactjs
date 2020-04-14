@@ -10,10 +10,8 @@ export default function Panel() {
   function Up(SelectTime) {
     if (SelectTime < 60 * 60) {
       const newTime = SelectTime + 60;
-      console.log(newTime);
       return newTime;
     } else {
-      console.log("Zerro");
       return 0;
     }
   }
@@ -23,7 +21,6 @@ export default function Panel() {
       return 0;
     } else {
       const newTime = SelectTime - 60;
-      console.log(newTime);
       return newTime;
     }
   }
@@ -41,7 +38,7 @@ export default function Panel() {
               <input
                 type="number"
                 id="workMinutes"
-                value={Math.floor(Work) / 60}
+                value={Math.floor(Work / 60)}
                 min="0"
                 onChange={(event) => setWork(event.target.value)}
               />
@@ -62,7 +59,7 @@ export default function Panel() {
               <input
                 type="number"
                 id="relaxMinutes"
-                value={Math.floor(Relax) / 60}
+                value={Math.floor(Relax / 60)}
                 min="0"
                 max="60"
                 onChange={(event) => setRelax(event.target.value)}
