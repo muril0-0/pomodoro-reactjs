@@ -8,7 +8,7 @@ export default function Display() {
   const { Relax } = useRelax();
 
   let [workCount, setWorkCount] = useState(Work);
-  const [relaxCount, setRelaxCount] = useState(Relax);
+  let [relaxCount, setRelaxCount] = useState(Relax);
 
   useEffect(() => {
     setWorkCount(Work);
@@ -20,9 +20,16 @@ export default function Display() {
       if (workCount > 0) {
         workCount = workCount - 1;
         setWorkCount(workCount);
-        console.log(workCount);
       } else {
         clearInterval(initiateWork);
+        const initiateRelax = setInterval(() => {
+          if (relaxCount > 0) {
+            relaxCount = relaxCount - 1;
+            setRelaxCount(relaxCount);
+          } else {
+            clearInterval(initiateRelax);
+          }
+        }, 1000);
       }
     }, 1000);
   }
@@ -33,7 +40,7 @@ export default function Display() {
         <div className="work-time">{`${Math.floor(workCount / 60)}:${
           workCount - Math.floor(workCount / 60) * 60
         }`}</div>
-        <div className="relax-time">{`${Math.floor(Relax / 60)}:${
+        <div className="relax-time">{`${Math.floor(relaxCount / 60)}:${
           relaxCount - Math.floor(relaxCount / 60) * 60
         }`}</div>
         <div className="controls">
