@@ -3,8 +3,8 @@ import React, { createContext, useState, useContext } from "react";
 const CustomContext = createContext();
 
 export default function CustomProvider({ children }) {
-  const [Work, setWork] = useState(60 * 25);
-  const [Relax, setRelax] = useState(60 * 5);
+  const [Work, setWork] = useState(25);
+  const [Relax, setRelax] = useState(5);
 
   return (
     <CustomContext.Provider value={{ Work, setWork, Relax, setRelax }}>

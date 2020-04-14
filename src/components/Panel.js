@@ -7,30 +7,26 @@ export default function Panel() {
   const { Work, setWork } = useWork();
   const { Relax, setRelax } = useRelax();
 
-  function UpSeconds(SelectTime) {
-    if (SelectTime < 60 * 60 + 59) {
-      const newTime = SelectTime + 1;
-      return newTime;
-    } else {
-      return 60 * 60;
-    }
+  function UpHours(SelectTime) {
+    const newTime = SelectTime + 60;
+    return newTime;
   }
 
-  function DownSeconds(SelectTime) {
-    if (SelectTime < 0) {
+  function DownHours(SelectTime) {
+    if (SelectTime <= 0) {
       return 0;
     } else {
-      const newTime = SelectTime - 1;
+      const newTime = SelectTime - 60;
       return newTime;
     }
   }
 
   function UpMinutes(SelectTime) {
-    if (SelectTime < 60 * 60) {
-      const newTime = SelectTime + 60;
+    if (SelectTime <= 60 * 24 + 59) {
+      const newTime = SelectTime + 1;
       return newTime;
     } else {
-      return 60 * 60;
+      return 0;
     }
   }
 
@@ -38,7 +34,7 @@ export default function Panel() {
     if (SelectTime <= 0) {
       return 0;
     } else {
-      const newTime = SelectTime - 60;
+      const newTime = SelectTime - 1;
       return newTime;
     }
   }
@@ -49,31 +45,36 @@ export default function Panel() {
         <div className="work-panel">
           <div className="selector-time">
             <div className="controls-time">
-              <button onClick={() => setWork(UpMinutes(Work))}>+60</button>
-              <button onClick={() => setWork(DownMinutes(Work))}>-60</button>
+              <button onClick={() => setWork(UpHours(Work))}>+</button>
+              <button onClick={() => setWork(DownHours(Work))}>-</button>
             </div>
 
             <div className="work-inputs">
               <input
                 type="number"
-                id="workMinutes"
-                value={Math.floor(Work / 60)}
+                id="workHour"
+                value={Math.floor(Work / 60) < 24 ? Math.floor(Work / 60) : 24}
                 min="0"
                 max="60"
+                onChange={(event) => setWork(event.target.value)}
               />
               :
               <input
                 type="number"
-                id="workSeconds"
-                value={Math.floor(Work % 60)}
+                id="workMinutes"
+                value={
+                  Math.floor(Work) < 60
+                    ? Math.floor(Work)
+                    : Math.floor(Work) % 60
+                }
                 min="0"
-                max="60"
+                onChange={(event) => setWork(event.target.value)}
               />
             </div>
 
             <div className="controls-time">
-              <button onClick={() => setWork(UpSeconds(Work))}>+1</button>
-              <button onClick={() => setWork(DownSeconds(Work))}>-1</button>
+              <button onClick={() => setWork(UpMinutes(Work))}>+</button>
+              <button onClick={() => setWork(DownMinutes(Work))}>-</button>
             </div>
           </div>
           <p>Work</p>
@@ -81,30 +82,38 @@ export default function Panel() {
         <div className="relax-panel">
           <div className="selector-time">
             <div className="controls-time">
-              <button onClick={() => setRelax(UpMinutes(Relax))}>+60</button>
-              <button onClick={() => setRelax(DownMinutes(Relax))}>-60</button>
+              <button onClick={() => setRelax(UpHours(Relax))}>+</button>
+              <button onClick={() => setRelax(DownHours(Relax))}>-</button>
             </div>
             <div className="relax-inputs">
               <input
                 type="number"
-                id="relaxMinutes"
-                value={Math.floor(Relax / 60)}
+                id="relaxHour"
+                value={
+                  Math.floor(Relax / 60) < 24 ? Math.floor(Relax / 60) : 24
+                }
                 min="0"
                 max="60"
+                onChange={(event) => setRelax(event.target.value)}
               />
               :
               <input
                 type="number"
-                id="relaxSeconds"
-                value={Math.floor(Relax % 60)}
+                id="relaxMinutes"
+                value={
+                  Math.floor(Relax) < 60
+                    ? Math.floor(Relax)
+                    : Math.floor(Relax) % 60
+                }
                 min="0"
                 max="60"
+                onChange={(event) => setRelax(event.target.value)}
               />
             </div>
 
             <div className="controls-time">
-              <button onClick={() => setRelax(UpSeconds(Relax))}>+1</button>
-              <button onClick={() => setRelax(DownSeconds(Relax))}>-1</button>
+              <button onClick={() => setRelax(UpMinutes(Relax))}>+</button>
+              <button onClick={() => setRelax(DownMinutes(Relax))}>-</button>
             </div>
           </div>
           <p>Relax</p>
