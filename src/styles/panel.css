@@ -2,16 +2,17 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  width: 50%;
+  justify-content: center;
+  width: 35%;
   margin-top: 30px;
 }
 
 .work-panel,
 .relax-panel {
-  width: 300px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   border-radius: 20px 20px 0 0;
+  margin: 0px 20px;
 
   display: flex;
   flex-direction: column;
@@ -34,21 +35,22 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
-  height: 100%;
+  justify-content: space-between;
 }
 
 .work-panel > p {
   background-color: var(--blue);
   color: #fff;
-  font-size: 20px;
+  font-size: 18px;
+  padding: 5px 0px;
   text-align: center;
 }
 
 .relax-panel > p {
   background-color: var(--green);
   color: #fff;
-  font-size: 20px;
+  font-size: 18px;
+  padding: 5px 0px;
   text-align: center;
 }
 
@@ -60,29 +62,20 @@
 }
 
 .controls-time button {
-  border: none;
   width: 40px;
   height: 30px;
   font-weight: bold;
+  border-radius: 10px;
+  margin: 0 10px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  transition: transform 0.1s ease;
+  transition: transform 0.2s linear;
 
   cursor: pointer;
-}
-
-.controls-time button:first-child {
-  border-radius: 10px 10px 0px 0px;
-  border-bottom: none;
-}
-
-.controls-time button:last-child {
-  border-radius: 0px 0px 10px 10px;
-  border-top: none;
 }
 
 .work-panel button {
@@ -92,8 +85,9 @@
 }
 
 .work-panel button:hover {
+  border: none;
   background-color: var(--blue);
-  transform: scale(1.05);
+  transform: scale(1.1);
   color: #fff;
 }
 
@@ -104,8 +98,9 @@
 }
 
 .relax-panel button:hover {
+  border: none;
   background-color: var(--green);
-  transform: scale(1.05);
+  transform: scale(1.1);
   color: #fff;
 }
 
