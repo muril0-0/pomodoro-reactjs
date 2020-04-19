@@ -9,6 +9,7 @@ export default function Display() {
 
   let [workCount, setWorkCount] = useState(Work);
   let [relaxCount, setRelaxCount] = useState(Relax);
+  let [inLoop, setinLoop] = useState(false);
 
   useEffect(() => {
     setWorkCount(Work);
@@ -20,18 +21,24 @@ export default function Display() {
       if (workCount > 0) {
         workCount = workCount - 1;
         setWorkCount(workCount);
-      } else {
+      } else if (!inLoop || workCount === 0) {
         clearInterval(initiateWork);
         const initiateRelax = setInterval(() => {
           if (relaxCount > 0) {
             relaxCount = relaxCount - 1;
             setRelaxCount(relaxCount);
-          } else {
+          } else if (!inLoop || relaxCount === 0) {
             clearInterval(initiateRelax);
           }
         }, 1000);
       }
     }, 1000);
+  }
+
+  function handlerReset() {
+    workCount = Work;
+    relaxCount = Relax;
+    setinLoop(!inLoop);
   }
 
   return (
@@ -48,7 +55,9 @@ export default function Display() {
             Start
           </button>
           <button id="pause-btn">Pause</button>
-          <button id="reset-btn">Reset</button>
+          <button id="reset-btn" onClick={handlerReset}>
+            Reset
+          </button>
         </div>
       </div>
     </>
