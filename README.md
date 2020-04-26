@@ -29,25 +29,25 @@ Abra [http://localhost:3000](http://localhost:3000) em seu navegador para visual
 __EN__
 
 
-_Make download or clone this repository.
+_Make download or clone this repository._
 `git clone https://github.com/muril0-0/pomodoro-reactjs`
 
-_Go to repository folder:
+_Go to repository folder:_
 `cd "./pomodoro-reactjs/frontend"`
 
-_Install project dependencies:
+_Install project dependencies:_
 `yarn install`
 
-_Run roject:
+_Run roject:_
 `yarn start`
-_Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+_Open [http://localhost:3000](http://localhost:3000) to view it in the browser._
 
 
 ## 📚 Mais Informações / Learn More
 
-Você pode ler mais sobre o ReactJs em https://facebook.github.io/create-react-app/docs/getting-started
+Você pode ler mais sobre o ReactJs em (https://facebook.github.io/create-react-app/docs/getting-started).
+Sequiser aprender React, visite (https://reactjs.org/).
 
-You can learn more in the https://facebook.github.io/create-react-app/docs/getting-started.
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+_You can learn more in the (https://facebook.github.io/create-react-app/docs/getting-started)._
+_To learn React, check out the (https://reactjs.org/)._
 
