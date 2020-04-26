@@ -46,7 +46,7 @@ _Open [http://localhost:3000](http://localhost:3000) to view it in the browser._
 ## 📚 Mais Informações / Learn More
 
 Você pode ler mais sobre o ReactJs em (https://facebook.github.io/create-react-app/docs/getting-started).
-Sequiser aprender React, visite (https://reactjs.org/).
+Para aprender React, visite (https://reactjs.org/).
 
 _You can learn more in the (https://facebook.github.io/create-react-app/docs/getting-started)._
 _To learn React, check out the (https://reactjs.org/)._
